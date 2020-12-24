@@ -20,7 +20,13 @@ public class VerificaPossibilidadeDeAposentadoria {
         System.out.print("Digite quanto anos de contribuição para a Previdência você tem: ");
         Integer anosDeContribuicao = scanner.nextInt();
 
-        if(idade >= IDADE_MINIMA_PARA_SE_APOSENTAR && anosDeContribuicao >= TEMPO_MINIMO_DE_CONTRIBUICAO) {
+        Boolean temIdadeParaAposentar = idade >= IDADE_MINIMA_PARA_SE_APOSENTAR;
+
+        Boolean temTempoDeContribuicaoSuficiente = anosDeContribuicao >= TEMPO_MINIMO_DE_CONTRIBUICAO;
+
+        Boolean podeAposentar = temIdadeParaAposentar && temTempoDeContribuicaoSuficiente;
+
+        if(podeAposentar) {
             System.out.println("Parabéns, você pode se aposentar!");
         } else {
             System.out.println("Infelizmente, você ainda não pode se aposentar!");
