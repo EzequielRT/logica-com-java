@@ -11,9 +11,7 @@ public class CriandoMetodos {
 
             System.out.println("Escolha dentre os cursos abaixo: ");
 
-            for(int i = 0; i < cursos.length; i++) {
-                System.out.println("[" + i + "] " + cursos[i]);
-            }
+            iterarEExibirPosicoesDoVetor(cursos);
 
             System.out.print("O curso que você deseja é o: ");
             Integer posicaoCursoEscolhido = scanner.nextInt();
@@ -30,9 +28,7 @@ public class CriandoMetodos {
 
             System.out.println("Escolha dentre as formas de pagamento abaixo: ");
 
-            for(int i = 0; i < formasPagamento.length; i++) {
-                System.out.println("[" + i + "] " + formasPagamento[i]);
-            }
+            iterarEExibirPosicoesDoVetor(formasPagamento);
 
             System.out.print("Sua forma de pagamento escolhida é: ");
             Integer posicaoFormaPagamentoEscolhida = scanner.nextInt();
@@ -61,5 +57,11 @@ public class CriandoMetodos {
         static void opcaoInvalida() {
             System.err.println("Posição inválida!");
             System.exit(1);
+        }
+
+        static void iterarEExibirPosicoesDoVetor (String[] vetor) {
+            for(int i = 0; i < vetor.length; i++) {
+                System.out.println("[" + i + "] " + vetor[i]);
+            }
         }
 }
