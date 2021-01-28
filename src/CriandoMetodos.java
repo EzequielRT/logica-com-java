@@ -9,11 +9,11 @@ public class CriandoMetodos {
 
             String[] cursos = new String[] {"Java EE", "Spring", "Java OO Avançado"};
 
-            System.out.println("Escolha dentre os cursos abaixo: ");
+            imprimir("Escolha dentre os cursos abaixo: ");
 
             iterarEExibirPosicoesDoVetor(cursos);
 
-            System.out.print("O curso que você deseja é o: ");
+            imprimirEContinuarNaMesmaLinha("O curso que você deseja é o: ");
             Integer posicaoCursoEscolhido = scanner.nextInt();
 
             Boolean posicaoValida = posicaoCursoEscolhido >= 0 && posicaoCursoEscolhido < cursos.length;
@@ -26,11 +26,11 @@ public class CriandoMetodos {
 
             String[] formasPagamento = new String[] {"Cartão", "Boleto"};
 
-            System.out.println("Escolha dentre as formas de pagamento abaixo: ");
+            imprimir("Escolha dentre as formas de pagamento abaixo: ");
 
             iterarEExibirPosicoesDoVetor(formasPagamento);
 
-            System.out.print("Sua forma de pagamento escolhida é: ");
+            imprimirEContinuarNaMesmaLinha("Sua forma de pagamento escolhida é: ");
             Integer posicaoFormaPagamentoEscolhida = scanner.nextInt();
 
             posicaoValida = posicaoFormaPagamentoEscolhida >= 0
@@ -45,9 +45,17 @@ public class CriandoMetodos {
 
             imprimirTraco();
 
-            System.out.println("O curso escolhido foi " + cursoEscolhido + " e a forma de pagamento é " + formaPagamentoEscolhida + ".");
+            imprimir("O curso escolhido foi " + cursoEscolhido + " e a forma de pagamento é " + formaPagamentoEscolhida + ".");
 
             scanner.close();
+        }
+
+        static void imprimir(String texto) {
+            System.out.println(texto);
+        }
+
+        static void imprimirEContinuarNaMesmaLinha(String texto) {
+            System.out.print(texto);
         }
 
         static void imprimirTraco() {
