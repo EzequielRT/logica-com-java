@@ -13,8 +13,7 @@ public class CriandoMetodos {
 
             iterarEExibirPosicoesDoVetor(cursos);
 
-            imprimirEContinuarNaMesmaLinha("O curso que você deseja é o: ");
-            Integer posicaoCursoEscolhido = scanner.nextInt();
+            Integer posicaoCursoEscolhido = receberNumeroInteiroDoUsuario("O curso que você deseja é o: ", scanner);
 
             Boolean posicaoValida = verificaPosicaoEscolhidaPeloUsuario(posicaoCursoEscolhido, cursos);
 
@@ -30,8 +29,7 @@ public class CriandoMetodos {
 
             iterarEExibirPosicoesDoVetor(formasPagamento);
 
-            imprimirEContinuarNaMesmaLinha("Sua forma de pagamento escolhida é: ");
-            Integer posicaoFormaPagamentoEscolhida = scanner.nextInt();
+            Integer posicaoFormaPagamentoEscolhida = receberNumeroInteiroDoUsuario("Sua forma de pagamento escolhida é: ", scanner);
 
             posicaoValida = verificaPosicaoEscolhidaPeloUsuario(posicaoFormaPagamentoEscolhida,formasPagamento);
 
@@ -47,6 +45,13 @@ public class CriandoMetodos {
             imprimir("O curso escolhido foi " + cursoEscolhido + " e a forma de pagamento é " + formaPagamentoEscolhida + ".");
 
             scanner.close();
+        }
+
+        static Integer receberNumeroInteiroDoUsuario(String texto, Scanner scanner) {
+            imprimirEContinuarNaMesmaLinha(texto);
+            Integer numero = scanner.nextInt();
+
+            return numero;
         }
 
         static Boolean verificaPosicaoEscolhidaPeloUsuario(Integer posicao, String[] vetor) {
