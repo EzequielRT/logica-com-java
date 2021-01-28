@@ -16,7 +16,7 @@ public class CriandoMetodos {
             imprimirEContinuarNaMesmaLinha("O curso que você deseja é o: ");
             Integer posicaoCursoEscolhido = scanner.nextInt();
 
-            Boolean posicaoValida = posicaoCursoEscolhido >= 0 && posicaoCursoEscolhido < cursos.length;
+            Boolean posicaoValida = verificaPosicaoEscolhidaPeloUsuario(posicaoCursoEscolhido, cursos);
 
             if (!posicaoValida) {
                 opcaoInvalida();
@@ -33,8 +33,7 @@ public class CriandoMetodos {
             imprimirEContinuarNaMesmaLinha("Sua forma de pagamento escolhida é: ");
             Integer posicaoFormaPagamentoEscolhida = scanner.nextInt();
 
-            posicaoValida = posicaoFormaPagamentoEscolhida >= 0
-                    && posicaoFormaPagamentoEscolhida < formasPagamento.length;
+            posicaoValida = verificaPosicaoEscolhidaPeloUsuario(posicaoFormaPagamentoEscolhida,formasPagamento);
 
             if (!posicaoValida) {
                 opcaoInvalida();
@@ -48,6 +47,11 @@ public class CriandoMetodos {
             imprimir("O curso escolhido foi " + cursoEscolhido + " e a forma de pagamento é " + formaPagamentoEscolhida + ".");
 
             scanner.close();
+        }
+
+        static Boolean verificaPosicaoEscolhidaPeloUsuario(Integer posicao, String[] vetor) {
+            Boolean valida = posicao >= 0 && posicao < vetor.length;
+            return valida;
         }
 
         static void imprimir(String texto) {
